@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserratAlternates.variable}>
       <link rel="icon" href="./title-logo.jpg" />
-      <body className="font-sans antialiased bg-slate-200 text-white min-h-screen">
+      <body className="font-sans antialiased bg-slate-300 text-white min-h-screen">
         {children}
       </body>
     </html>
