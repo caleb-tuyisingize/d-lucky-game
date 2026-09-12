@@ -10,7 +10,7 @@ interface WelcomeScreenProps {
 export function WelcomeScreen({ onSelectSport }: WelcomeScreenProps) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6 text-center">
-      <h1 className="text-4xl md:text-6xl flex justify-between items-center font-bold tracking-wider mb-4 text-yellow-400 drop-shadow-md">
+      <h1 className="text-4xl md:text-6xl flex justify-between items-center font-bold tracking-wider mb-4 text-emerald-700 drop-shadow-md">
         Welcome to D-Lucky-Game <Trophy height={100} width={60}/>
       </h1>
       <p className="text-lg md:text-xl text-slate-900 mb-8 max-w-lg">
