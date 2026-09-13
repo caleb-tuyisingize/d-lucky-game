@@ -57,22 +57,28 @@ export default function Home() {
   }, [gameState, timeLeft, collectedCount, targetScore]);
 
   const handleSackClick = () => {
-    if (gameState !== 'playing') return;
+  if (gameState !== 'playing') return;
 
-    const randomSport = ALL_SPORTS[Math.floor(Math.random() * ALL_SPORTS.length)];
-    const isName = level >= 3 && Math.random() > 0.6;
+  const randomSport = ALL_SPORTS[Math.floor(Math.random() * ALL_SPORTS.length)];
+  const isName = level >= 3 && Math.random() > 0.6;
+  
+  const itemId = Math.random().toString();
 
-    const newItem: PopUpItem = {
-      id: Math.random().toString(),
-      sport: randomSport,
-      type: isName ? 'name' : 'ball',
-      label: isName ? SPORT_THEMES[randomSport].name : undefined,
-      x: Math.floor(Math.random() * 70) + 10,
-      y: Math.floor(Math.random() * 60) + 10,
-    };
-
-    setActiveItems((prev) => [...prev, newItem]);
+  const newItem: PopUpItem = {
+    id: itemId,
+    sport: randomSport,
+    type: isName ? 'name' : 'ball',
+    label: isName ? SPORT_THEMES[randomSport].name : undefined,
+    x: Math.floor(Math.random() * 70) + 10,
+    y: Math.floor(Math.random() * 60) + 10,
   };
+
+  setActiveItems((prev) => [...prev, newItem]);
+
+  setTimeout(() => {
+    setActiveItems((prev) => prev.filter((item) => item.id !== itemId));
+  }, 2000);
+};
 
   const handleItemClick = (item: PopUpItem) => {
     if (gameState !== 'playing' || !selectedSport) return;
