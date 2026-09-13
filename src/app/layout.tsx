@@ -18,11 +18,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const bgUrl = "./Gemini_Generated_Image_c3ntpgc3ntpgc3nt.jpg"
   return (
     <html lang="en" className={montserratAlternates.variable}>
       <link rel="icon" href="./title-logo.jpg" />
-      <body className="font-sans antialiased bg-slate-300 text-white min-h-screen">
+      <body className={`font-sans bg-[url(${bgUrl})] bg-cover bg-fixed antialiased text-white min-h-screen`} style={{ backgroundImage: `url(${bgUrl})` }}>
+        <div className="absolute inset-0 bg-white/60"></div>
+        <div className="relative">
         {children}
+        </div>
       </body>
     </html>
   );
