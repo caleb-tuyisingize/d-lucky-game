@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat_Alternates } from 'next/font/google';
 import './globals.css';
+import WelcomeVideo from '../components/game/WelcomeVideo';
 
 const montserratAlternates = Montserrat_Alternates({
   weight: ['400', '600', '700'],
@@ -22,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserratAlternates.variable}>
       <link rel="icon" href="./title-logo.jpg" />
-      <body className={`font-sans bg-[url(${bgUrl})] bg-cover bg-fixed antialiased text-white min-h-screen`} style={{ backgroundImage: `url(${bgUrl})` }}>
+      <body className={`font-sans bg-cover bg-fixed antialiased text-white min-h-screen`} style={{ backgroundImage: `url(${bgUrl})` }}>
+      <WelcomeVideo />
         <div className="absolute inset-0 bg-white/60"></div>
         <div className="relative">
         {children}
