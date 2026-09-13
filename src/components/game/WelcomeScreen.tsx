@@ -13,7 +13,7 @@ export function WelcomeScreen({ onSelectSport }: WelcomeScreenProps) {
       <h1 className="text-4xl md:text-6xl flex justify-between items-center font-bold tracking-wider mb-4 text-emerald-700 drop-shadow-md">
         Welcome to D-Lucky-Game <Trophy height={100} width={60}/>
       </h1>
-      <p className="text-lg md:text-xl text-slate-900 mb-8 max-w-lg">
+      <p className="text-lg md:text-2xl font-bold text-slate-900 mb-8 max-w-xl">
         Match Breaktime? Pick a game or game ball to enter the court and test your reflexes!
       </p>
 
