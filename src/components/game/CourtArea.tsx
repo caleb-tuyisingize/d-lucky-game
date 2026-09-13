@@ -1,10 +1,10 @@
-import { PopUpItem, SPORT_THEMES, SportType } from '@/src/types/game';
-import { MagicSack } from './MagicSack';
-import { GameModals } from './GameModals';
+import { PopUpItem, SPORT_THEMES, SportType } from "@/src/types/game";
+import { MagicSack } from "./MagicSack";
+import { GameModals } from "./GameModals";
 
 interface CourtAreaProps {
   selectedSport: SportType;
-  gameState: 'playing' | 'passed' | 'gameover';
+  gameState: "playing" | "passed" | "gameover";
   activeItems: PopUpItem[];
   score: number;
   level: number;
@@ -47,9 +47,9 @@ export function CourtArea({
           key={item.id}
           onClick={() => onItemClick(item)}
           style={{ top: `${item.y}%`, left: `${item.x}%` }}
-          className="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 active:scale-95 transition-all duration-150 animate-bounce cursor-pointer"
+          className="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 animate-pulse hover:scale-125 active:scale-95 cursor-pointer"
         >
-          {item.type === 'ball' ? (
+          {item.type === "ball" ? (
             <span className="text-5xl filter drop-shadow-md select-none">
               {SPORT_THEMES[item.sport].ballEmoji}
             </span>
@@ -62,10 +62,10 @@ export function CourtArea({
       ))}
 
       {/* Magic Sack */}
-      {gameState === 'playing' && <MagicSack onSackClick={onSackClick} />}
+      {gameState === "playing" && <MagicSack onSackClick={onSackClick} />}
 
       {/* Modals */}
-      {gameState !== 'playing' && (
+      {gameState !== "playing" && (
         <GameModals
           gameState={gameState}
           score={score}
